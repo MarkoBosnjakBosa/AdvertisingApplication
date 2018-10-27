@@ -108,6 +108,10 @@ $user_id = $user['id'];
 						});
 					}
 				});
+				$(document).on('click', '#reset_button', function () {
+					$("#ad_picture_preview").empty();
+					$("#pictures_preview").empty();
+				})
 			})
 		</script>
 	</head>
@@ -278,7 +282,7 @@ $user_id = $user['id'];
 					</div>
 					<div class="form-row">
 						<div class="col-sm">
-							<button class="btn btn-lg btn-danger btn-block" type="reset">Reset</button>
+							<button class="btn btn-lg btn-danger btn-block" id="reset_button" type="reset">Reset</button>
 						</div>
 						<div class="col-sm">
 							<button class="btn btn-lg btn-primary btn-block" id="new_ad_button" type="submit">Submit</button>

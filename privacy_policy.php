@@ -94,15 +94,17 @@ $fetch_result = mysqli_fetch_assoc($result);
 				</ul>
 			</div>
 		</nav>
-		<div class="container" id="privacy_policy">
-			<?php 
-				if($fetch_result['privacy_policy'] == ""){
-					echo "<div style='margin-top: 10px; color:red; text-align: center'>There is no privacy policy to be displayed!</div>";
-				}
-				else{
-					echo nl2br($fetch_result['privacy_policy']);
-				}
-			?>
+		<div class="container">
+			<div class="jumbotron" id="privacy_policy">
+				<?php 
+					if($fetch_result['privacy_policy'] == ""){
+						echo "<div style='color:red; text-align: center'><strong>There is no privacy policy to be displayed!</strong></div>";
+					}
+					else{
+						echo nl2br($fetch_result['privacy_policy']);
+					}
+				?>
+			</div>
 		</div>
 	</body>
 </html>
