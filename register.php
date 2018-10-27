@@ -74,6 +74,10 @@ mysqli_set_charset($link,'utf-8');
 						}
 					})
 				})
+				$(document).on('click', '#reset_button', function () {
+					$("#username_status").hide();
+					$("#email_status").hide();
+				})
 			})
 		</script>
 	</head>
@@ -191,7 +195,7 @@ mysqli_set_charset($link,'utf-8');
 						</div>
 						<div class="form-row">
 							<div class="col-sm">
-								<button class="btn btn-lg btn-danger btn-block" type="reset">Reset</button>
+								<button class="btn btn-lg btn-danger btn-block" id="reset_button" type="reset">Reset</button>
 							</div>
 							<div class="col-sm">
 								<button class="btn btn-lg btn-primary btn-block" id="registration_button" type="submit">Submit</button>
