@@ -7,9 +7,9 @@ if(!isset($_SESSION['username']) && empty($_SESSION['username'])){
 }
 $username = $_SESSION['username'];
 
-if(isset($_POST['username']) && !empty($_POST['username'])){
-	$username = mysqli_real_escape_string($link, $_POST['username']);
-	$query = "UPDATE users SET privacy_policy = 1 WHERE username = '$username'";
+if(isset($_POST['id']) && !empty($_POST['id'])){
+	$id = mysqli_real_escape_string($link, $_POST['id']);
+	$query = "UPDATE users SET privacy_policy = 1 WHERE id = '$id'";
 	$query = mysqli_query($link, $query);
 	if($query){
 		$alert_type = "success";

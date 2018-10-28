@@ -10,6 +10,7 @@ $username = $_SESSION['username'];
 $query = "SELECT * FROM users WHERE username = '$username'";
 $result = mysqli_query($link, $query);
 $fetch_result = mysqli_fetch_assoc($result);
+$id = $fetch_result['id'];
 ?>
 <html>
 	<head>
@@ -29,7 +30,6 @@ $fetch_result = mysqli_fetch_assoc($result);
 			$(document).ready(function(){
 				displayPrivacyPolicy();
 				function displayPrivacyPolicy(){
-					console.log("1");
 					$.ajax({
 						url: "displays/display_privacy_policy.php",
 						method: "GET",
@@ -46,11 +46,11 @@ $fetch_result = mysqli_fetch_assoc($result);
 					})
 				}
 				$(document).on('click', '#confirm_privacy_policy_button', function(){
-					var username = "<?php echo $username; ?>";
+					var id = "<?php echo $id; ?>";
 					$.ajax({
 						url: "handlers/privacy_policy_handler.php",
 						method: "POST",
-						data: {username : username},
+						data: {id : id},
 						dataType: "html",
 						success: function(data){
 							$("#privacy_policy_dialog").modal("hide");
