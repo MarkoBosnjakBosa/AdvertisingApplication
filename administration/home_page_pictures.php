@@ -36,9 +36,9 @@ $username = $_SESSION['admin_username'];
 					e.preventDefault();  
 					$(this).removeClass('drag_area_over');  
 					var formData = new FormData();  
-					var files_list = e.originalEvent.dataTransfer.files;  
-					for(var i=0; i<files_list.length; i++){  
-						formData.append("home_page_pictures[]", files_list[i]);  
+					var pictures = e.originalEvent.dataTransfer.files;  
+					for(var x = 0; x < pictures.length; x++){  
+						formData.append("home_page_pictures[]", pictures[x]);  
 					}
 					$.ajax({  
 						url: "submissions/submit_home_page_pictures.php",

@@ -36,8 +36,8 @@ $user_id = $user['id'];
 					e.preventDefault();
 					var formData = new FormData();
 					formData.append("ad_picture", $("#ad_picture")[0].files[0]);
-					var lenght = document.getElementById("pictures").files.length;
-					for (var x = 0; x < lenght; x++) {
+					var length = document.getElementById("pictures").files.length;
+					for (var x = 0; x < length; x++) {
 						formData.append("pictures[]", document.getElementById("pictures").files[x]);
 					}
 					formData.append("recaptcha", grecaptcha.getResponse());

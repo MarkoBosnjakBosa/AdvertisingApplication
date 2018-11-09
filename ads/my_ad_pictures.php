@@ -46,9 +46,9 @@ if(isset($_GET['ad_id']) && !empty($_GET['ad_id'])){
 					e.preventDefault();  
 					$(this).removeClass('drag_area_over');  
 					var formData = new FormData();  
-					var files_list = e.originalEvent.dataTransfer.files;  
-					for(var i=0; i<files_list.length; i++){  
-						formData.append("pictures[]", files_list[i]);						
+					var pictures = e.originalEvent.dataTransfer.files;  
+					for(var x = 0; x < pictures.length; x++){  
+						formData.append("pictures[]", pictures[x]);						
 					}
 					formData.append("ad_id", "<?php echo $ad_id;?>");
 					$.ajax({  
